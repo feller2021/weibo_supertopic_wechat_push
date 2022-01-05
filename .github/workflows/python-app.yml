@@ -1,4 +1,4 @@
-name: 微博计划任务
+name: supertopic计划任务
 
 on:
   push:
