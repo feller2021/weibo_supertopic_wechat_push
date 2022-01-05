@@ -10,6 +10,7 @@ import content
 import htmljiexi
 from urllib.parse import quote
 import urlencode
+import tosuperid
 
 
 class weiboMonitor():
@@ -21,9 +22,9 @@ class weiboMonitor():
             'Connection': 'close',
             'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
         }
-        # aa=urlencode.urlencode('社会队树洞')
-        # bb = urlencode.urlencode('虚拟机')
-        self.uid = ['100808634d64ced1cb018734acb2d099ce6b4c', '100808585170390bc197496915d71093aae7b8']
+        aa=tosuperid.findsupid('吴安琪')
+        bb = tosuperid.findsupid('张倩霏')
+        self.uid = [aa, bb]
 
     # 获取访问连接
     def getweiboInfo(self):
@@ -99,7 +100,7 @@ class weiboMonitor():
                         # print(type(dfd))
                         for x in dfd:
                             kl = x['card_type']
-                            print(kl)
+                            # print(kl)
                             if int(kl) == 9:
                                 mblog = x['mblog']['id']
                                 # print(mblog)
@@ -107,7 +108,7 @@ class weiboMonitor():
                                     with open('wbIds.txt', 'a') as f:
                                         f.write(x['mblog']['id'] + '\n')
                                         idd = str(x['mblog']['id'])
-                                        print('idd is' + idd)
+                                        # print('idd is' + idd)
                                         txt = x
 
                                         createtime = x['mblog']['created_at']
