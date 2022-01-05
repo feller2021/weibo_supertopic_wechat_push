@@ -24,7 +24,8 @@ class weiboMonitor():
         }
         aa=tosuperid.findsupid('吴安琪')
         bb = tosuperid.findsupid('张倩霏')
-        self.uid = [aa, bb]
+        cc = tosuperid.findsupid('朱苓')
+        self.uid = [aa, bb,cc]
 
     # 获取访问连接
     def getweiboInfo(self):
