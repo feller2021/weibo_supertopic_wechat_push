@@ -8,7 +8,7 @@ from urllib.parse import quote
 # print(url2)
 def urlencode(china):
     china=china
-    encode = '=61&q=#'+china+'#&t=0'
+    encode = '=98&q='+china+'&t=0'
     kk = quote(encode)
     return kk
 
