@@ -25,7 +25,11 @@ class weiboMonitor():
         aa=tosuperid.findsupid('吴安琪')
         bb = tosuperid.findsupid('张倩霏')
         cc = tosuperid.findsupid('朱苓')
-        self.uid = [aa, bb,cc]
+        dd = tosuperid.findsupid('黄楚茵')
+        ee = tosuperid.findsupid('吴羽霏')
+        ff = tosuperid.findsupid('梁婉琳')
+
+        self.uid = [aa, bb,cc,dd,ee,ff]
 
     # 获取访问连接
     def getweiboInfo(self):
