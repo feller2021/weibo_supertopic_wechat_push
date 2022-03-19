@@ -1,7 +1,7 @@
 #### 介绍
-这是一个关于微博动态推送到微信通知的项目。项目来自[WBDmonitor](https://github.com/Bla1n/WBDmonitor)
-是[weibo_dynamic_wechat_push](https://github.com/liurenjie520/weibo_dynamic_wechat_push) 项目的扩展。
-该项目的推送接口已经废掉，待找到能满足文本+图片的微信推送接口在维护。
+### 这是一个关于微博动态推送到微信通知的项目。项目来自[WBDmonitor](https://github.com/Bla1n/WBDmonitor)
+### 是[weibo_dynamic_wechat_push](https://github.com/liurenjie520/weibo_dynamic_wechat_push) 项目的扩展。
+### 该项目的推送接口已经废掉，待找到能满足文本+图片的微信推送接口在维护。
 
 #### 软件架构
 Python
