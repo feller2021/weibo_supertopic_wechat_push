@@ -97,7 +97,10 @@ def wbcontent(txt, createtime, sourcel, fasname, deit, reposts, attitudes, comme
 
     imgpost = 'https://push.bot.qw360.cn/send/e54011f0-f9aa-11eb-806f-9354f453c154'
     # headers = {'Content-Type': 'application/json'}
-    fasongneir = '@' + fasname + '\n'+'消息类型：超话推送'+ '\n' + format_time + ' ' + '来自 ' + sourcel + ' ' + '\n' + '▷' + isyuanchuang + '微博' + ' ' + isycsp + '\n' + '▷' + picnum2 + '张图' + ' '  + '\n' + '▷' + '推送时间：' + tzshj + ' ' + '\n' + '▷' + '延时推送：' + timedelay + ' ' + '\n' + '▷' + '原博链接：' + lianjie2 + ' ' + '\n' + '------------------------' + '\n' + braa + '\n' + '------------------------'
+    fasongneir000 = '@' + fasname + '\n'+'消息类型：超话推送'+ '\n' + format_time + ' ' + '来自 ' + sourcel + ' ' + '\n' + '▷' + isyuanchuang + '微博' + ' ' + isycsp + '\n' + '▷' + picnum2 + '张图' + ' '  + '\n' + '▷' + '推送时间：' + tzshj + ' ' + '\n' + '▷' + '延时推送：' + timedelay + ' ' + '\n' + '▷' + '原博链接：' + lianjie2 + ' ' + '\n' + '------------------------' + '\n' + braa + '\n' + '------------------------'
+    
+    fasongneir = '@' + fasname + '<br>'+'消息类型：超话推送'+ '<br>' + format_time + ' ' + '来自 ' + sourcel + ' ' + '<br>' + '▷' + isyuanchuang + '微博' + ' ' + isycsp + '<br>' + '▷' + picnum2 + '张图' + ' '  + '<br>' + '▷' + '推送时间：' + tzshj + ' ' + '<br>' + '▷' + '延时推送：' + timedelay + ' ' + '<br>' + '▷' + '原博链接：' + lianjie2 + ' ' + '<br>' + '------------------------' + '<br>' + braa + '<br>' + '------------------------'
+ 
     print(fasongneir)
     postdata = json.dumps({"msg": fasongneir})
     time.sleep(4)
@@ -118,7 +121,7 @@ def wbcontent(txt, createtime, sourcel, fasname, deit, reposts, attitudes, comme
     FormData = {
         "appToken": "AT_iaPxpUE0FLNUECu1zFnKhFR7R9NU5K8e",
         "content": content,
-        "summary": f"@" + fasname + '\n' + '微博发送时间：' + format_time + '\n' + '▷' + isyuanchuang + '微博' + ' ' + isycsp + '\n' + '▷' + picnum2 + '张图' + '\n' + '▷' + deit + ' ' + reposts2 + '转' + ' ' + attitudes2 + '赞' + ' ' + comments2 + '评' + ' ' + '\n' + '▷' + '推送时间：' + tzshj + ' ' + '\n' + '▷' + '延时推送：' + timedelay,
+        "summary": f"@" + fasname + '\n'+'消息类型：超话推送'+ '\n' + '微博发送时间：' + format_time + '\n' + '▷' + isyuanchuang + '微博' + ' ' + isycsp + '\n' + '▷' + picnum2 + '张图' + '\n' + '▷' + deit + ' ' + reposts2 + '转' + ' ' + attitudes2 + '赞' + ' ' + comments2 + '评' + ' ' + '\n' + '▷' + '推送时间：' + tzshj + ' ' + '\n' + '▷' + '延时推送：' + timedelay,
         "contentType": 2,
 
         "topicIds": [
