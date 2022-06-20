@@ -85,7 +85,7 @@ class weiboMonitor():
 
     # 开始监控
     def startmonitor(self, ):
-        returnDict = {}  # 获取微博相关内容，编辑为邮件
+        returnDict = {}  # 获取微博相关内容
         itemIds = []
         with open('wbIds.txt', 'r') as f:
             for line in f.readlines():
