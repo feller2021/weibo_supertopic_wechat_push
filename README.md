@@ -1,6 +1,6 @@
 #### 介绍
 
-这是一个关于微博动态推送到微信通知的项目。项目来自[WBDmonitor](https://github.com/Bla1n/WBDmonitor)
+这是一个关于微博【超级话题】动态推送到微信通知的项目。项目来自[WBDmonitor](https://github.com/Bla1n/WBDmonitor)
 
 是[weibo_dynamic_wechat_push](https://github.com/liurenjie520/weibo_dynamic_wechat_push) 项目的扩展。
 
