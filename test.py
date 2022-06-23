@@ -28,9 +28,11 @@ class weiboMonitor():
         dd = tosuperid.findsupid('黄楚茵')
         ee = tosuperid.findsupid('吴羽霏')
         ff = tosuperid.findsupid('梁婉琳')
+        # bej48等成员
         gg = tosuperid.findsupid('唐晨葳')
         hh = tosuperid.findsupid('王若诗蓝')
         ii = tosuperid.findsupid('张梦慧')
+        # gnz48等成员
         jj = tosuperid.findsupid('杨若惜')
         kk = tosuperid.findsupid('刘力菲')
         ll = tosuperid.findsupid('龙亦瑞')
