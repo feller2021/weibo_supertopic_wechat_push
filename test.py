@@ -22,17 +22,19 @@ class weiboMonitor():
             'Connection': 'close',
             'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
         }
+        # akb48teamsh等成员1
         aa=tosuperid.findsupid('吴安琪')
         bb = tosuperid.findsupid('张倩霏')
         cc = tosuperid.findsupid('朱苓')
+        # gnz48等成员1
         dd = tosuperid.findsupid('黄楚茵')
         ee = tosuperid.findsupid('吴羽霏')
         ff = tosuperid.findsupid('梁婉琳')
-        # bej48等成员
+        # bej48等成员1
         gg = tosuperid.findsupid('唐晨葳')
         hh = tosuperid.findsupid('王若诗蓝')
         ii = tosuperid.findsupid('张梦慧')
-        # gnz48等成员
+        # gnz48等成员2
         jj = tosuperid.findsupid('杨若惜')
         kk = tosuperid.findsupid('刘力菲')
         ll = tosuperid.findsupid('龙亦瑞')
