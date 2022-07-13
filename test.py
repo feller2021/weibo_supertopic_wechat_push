@@ -40,6 +40,10 @@ class weiboMonitor():
         ll = tosuperid.findsupid('龙亦瑞')
         mm = tosuperid.findsupid('罗可嘉')
         nn = tosuperid.findsupid('方琪')
+        # snh48等成员
+        oo = tosuperid.findsupid('苏杉杉')
+        pp = tosuperid.findsupid('费沁源')
+        qq = tosuperid.findsupid('姜杉')
 
         self.uid = [aa, bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm,nn]
 
