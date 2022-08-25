@@ -137,6 +137,8 @@ class weiboMonitor():
                                         sourcel = x['mblog']['source']
 
                                         fasname = x['mblog']['user']['screen_name']
+                                        # 推送到iPhonepushdeer
+                                        htmljiexi.iphonepushdeer(fasname,idd)
 
                                         try:
                                             deit = x['mblog']['edit_config']['edited']
