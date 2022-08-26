@@ -103,7 +103,7 @@ def wbcontent(txt, createtime, sourcel, fasname, deit, reposts, attitudes, comme
     else:
         bofanshipin = ''
 
-    #imgpost = 'https://push.bot.qw360.cn/send/e54011f0-f9aa-11eb-806f-9354f453c154'
+    # imgpost = 'https://push.bot.qw360.cn/send/e54011f0-f9aa-11eb-806f-9354f453c154'
     # headers = {'Content-Type': 'application/json'}
     fasongneir000 = '@' + fasname + '\n' + '消息类型：超话推送' + '\n' + format_time + ' ' + '来自 ' + sourcel + ' ' + '\n' + '▷' + isyuanchuang + '微博' + ' ' + isycsp + '\n' + '▷' + picnum2 + '张图' + ' ' + '\n' + '▷' + '推送时间：' + tzshj + ' ' + '\n' + '▷' + '延时推送：' + timedelay + ' ' + '\n' + '▷' + '原博链接：' + lianjie2 + ' ' + '\n' + '------------------------' + '\n' + braa + '\n' + '------------------------'
 
@@ -129,7 +129,7 @@ def wbcontent(txt, createtime, sourcel, fasname, deit, reposts, attitudes, comme
     FormData = {
         "appToken": "AT_iaPxpUE0FLNUECu1zFnKhFR7R9NU5K8e",
         "content": content,
-        "summary": f"[超话]@" + fasname + '\n'+'来自：'+sourcel+'\n' + '微博发送时间：' + format_time + '\n' + '▷' + isyuanchuang + '微博' + ' ' + isycsp + '\n' + '▷' + picnum2 + '张图' + '\n' + '▷' + deit + ' ' + reposts2 + '转' + ' ' + attitudes2 + '赞' + ' ' + comments2 + '评' + ' ' + '\n' + '▷' + '推送时间：' + tzshj + ' ' + '\n' + '▷' + '延时推送：' + timedelay,
+        "summary": f"[超话]@" + fasname + '\n' + '来自：' + sourcel + '\n' + '微博发送时间：' + format_time + '\n' + '▷' + isyuanchuang + '微博' + ' ' + isycsp + '\n' + '▷' + picnum2 + '张图' + '\n' + '▷' + deit + ' ' + reposts2 + '转' + ' ' + attitudes2 + '赞' + ' ' + comments2 + '评' + ' ' + '\n' + '▷' + '推送时间：' + tzshj + ' ' + '\n' + '▷' + '延时推送：' + timedelay,
         "contentType": 2,
 
         "topicIds": [
@@ -142,6 +142,32 @@ def wbcontent(txt, createtime, sourcel, fasname, deit, reposts, attitudes, comme
     }
     res = requests.post(url=url, json=FormData, headers=HEADERS)
     print(res.text)
+    res = res.text
+    jsonobj = json.loads(res)
+    toCntPercent = jsonobj['code']
+    if toCntPercent == 1001:
+        print("消息摘要过长，正在重试发送")
+        url = 'http://wxpusher.zjiecode.com/api/send/message'
+        HEADERS = {'Content-Type': 'application/json'}
+        FormData = {
+            "appToken": "AT_iaPxpUE0FLNUECu1zFnKhFR7R9NU5K8e",
+            "content": content,
+            "summary": f"[超话]@" + fasname + ';' + sourcel + ';' + format_time + ';' + picnum2 + '图' + isyuanchuang + isycsp,
+            "contentType": 2,
+
+            "topicIds": [
+
+            ],
+            "uids": [
+                "UID_noWsar4x3r0zd4WqjCaoD5CIX9Xi"
+            ],
+            "url": ""
+        }
+        res = requests.post(url=url, json=FormData, headers=HEADERS)
+        print(res.text)
+    else:
+        print("消息摘要正常")
+
 #     111111111111111111111111111111
 
 #
