@@ -45,3 +45,8 @@ Python
 4. 新建 Pull Request
 #### License
 [Apache-2.0 License](https://github.com/liurenjie520/weibo_dynamic_push/blob/main/LICENSE)
+
+#### 备注
+1. 消除ssl验证的警告 requests.packages.urllib3.disable_warnings()
+2. ,stream=True, verify=False
+
