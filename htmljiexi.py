@@ -54,7 +54,7 @@ def getpiclast(idd):
                 print("原创")
                 pic = k['pic_ids']
                 for lis in pic:
-                    jpg = 'https://wx4.sinaimg.cn/large/' + lis + '.jpg'
+                    jpg = 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/' + lis + '.jpg'
                     print("TUPISN"+jpg)
                     zuhe = "<img src=\"" + jpg + "\" >"
                     tupian += zuhe
@@ -71,7 +71,7 @@ def getpiclast(idd):
                 print("转发")
                 pic2 = k['retweeted_status']['pic_ids']
                 for lis2 in pic2:
-                    jpg2 = 'https://wx4.sinaimg.cn/large/' + lis2 + '.jpg'
+                    jpg2 = 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/' + lis2 + '.jpg'
                     print(jpg2)
                     zuhe = "<img src=\"" + jpg2 + "\" >"
                     tupian += zuhe
@@ -116,7 +116,7 @@ def getpiclast2(idd):
                 print("原创")
                 pic = k['pic_ids']
                 for lis in pic:
-                    jpg = 'https://wx4.sinaimg.cn/large/' + lis + '.jpg'
+                    jpg = 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/' + lis + '.jpg'
                     print(jpg)
                     tupian88.append(jpg)
                     zuhe = "<img src=\"" + jpg + "\" >"
@@ -134,7 +134,7 @@ def getpiclast2(idd):
                 print("转发")
                 pic2 = k['retweeted_status']['pic_ids']
                 for lis2 in pic2:
-                    jpg2 = 'https://wx4.sinaimg.cn/large/' + lis2 + '.jpg'
+                    jpg2 = 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/' + lis2 + '.jpg'
                     print(jpg2)
                     tupian88.append(jpg2)
                     zuhe = "<img src=\"" + jpg2 + "\" >"
@@ -173,7 +173,7 @@ def mun(idd):
                 # print("原创")
                 pic = k['pic_ids']
                 for lis in pic:
-                    jpg = 'https://wx4.sinaimg.cn/large/' + lis + '.jpg'
+                    jpg = 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/' + lis + '.jpg'
                     # print(jpg)
 
                 pic_num = k['pic_num']
@@ -188,7 +188,7 @@ def mun(idd):
                 # print("转发")
                 pic2 = k['retweeted_status']['pic_ids']
                 for lis2 in pic2:
-                    jpg2 = 'https://wx4.sinaimg.cn/large/' + lis2 + '.jpg'
+                    jpg2 = 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/' + lis2 + '.jpg'
                     # print(jpg2)
 
                 pic_num2 = k['retweeted_status']['pic_num']
