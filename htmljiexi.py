@@ -44,6 +44,8 @@ def getpiclast(idd):
         jpg2 = ''
         for j in list1:
             pprint(type(j))
+
+
             print(j)
             objson = json.loads(j)
             k = objson['status']
@@ -105,6 +107,7 @@ def getpiclast2(idd):
         jpg2 = ''
         for j in list1:
             pprint(type(j))
+
             print(j)
             objson = json.loads(j)
             k = objson['status']
