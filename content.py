@@ -125,7 +125,7 @@ def wbcontent(txt, createtime, sourcel, fasname, deit, reposts, attitudes, comme
     content = content.replace('\ "', '\"')
 
     url = 'http://wxpusher.zjiecode.com/api/send/message'
-    HEADERS = {'Content-Type': 'application/json'}
+    HEADERS = {'Content-Type': 'application/json','Connection':'close'}
     FormData = {
         "appToken": "AT_iaPxpUE0FLNUECu1zFnKhFR7R9NU5K8e",
         "content": content,
@@ -140,7 +140,7 @@ def wbcontent(txt, createtime, sourcel, fasname, deit, reposts, attitudes, comme
         ],
         "url": ""
     }
-    res = requests.post(url=url, json=FormData, headers=HEADERS)
+    res = requests.post(url=url, json=FormData, headers=HEADERS,stream=True, verify=False)
     print(res.text)
     res = res.text
     jsonobj = json.loads(res)
@@ -148,7 +148,7 @@ def wbcontent(txt, createtime, sourcel, fasname, deit, reposts, attitudes, comme
     if toCntPercent == 1001:
         print("消息摘要过长，正在重试发送")
         url = 'http://wxpusher.zjiecode.com/api/send/message'
-        HEADERS = {'Content-Type': 'application/json'}
+        HEADERS = {'Content-Type': 'application/json','Connection':'close'}
         FormData = {
             "appToken": "AT_iaPxpUE0FLNUECu1zFnKhFR7R9NU5K8e",
             "content": content,
@@ -163,7 +163,7 @@ def wbcontent(txt, createtime, sourcel, fasname, deit, reposts, attitudes, comme
             ],
             "url": ""
         }
-        res = requests.post(url=url, json=FormData, headers=HEADERS)
+        res = requests.post(url=url, json=FormData, headers=HEADERS,stream=True, verify=False)
         print(res.text)
     else:
         print("消息摘要正常")
