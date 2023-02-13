@@ -3,7 +3,8 @@
 # Author    : B1ain
 # Action    : 微博
 # Desc      : 微博主模块
-
+import time
+import traceback
 import requests, json, sys
 import getpic
 import content
@@ -11,7 +12,7 @@ import htmljiexi
 from urllib.parse import quote
 import urlencode
 import tosuperid
-
+requests.packages.urllib3.disable_warnings()
 
 class weiboMonitor():
     def __init__(self, ):
@@ -54,15 +55,17 @@ class weiboMonitor():
         self.weiboInfo = []
 
         for i in self.uid:
+            time.sleep(6)
 
             # userInfo = 'https://m.weibo.cn/api/container/getIndex?type=uid&value=%s' % (i)
             # userInfo = 'https://m.weibo.cn/api/container/getIndex?containerid=231522type%s&page_type=searchall' % (i)
             userInfo = 'https://m.weibo.cn/api/container/getIndex?jumpfrom=weibocom&containerid=%s_-_sort_time' % (
                 i)
-            res = requests.get(userInfo, headers=self.reqHeaders)
+            res = requests.get(userInfo, headers=self.reqHeaders,stream=True, verify=False)
             d = res.json()['data']['cards']
             # print(d)
             for j in d:
+
                 df = j['card_type']
                 # print(df)
                 if int(df) == 11:
@@ -83,7 +86,9 @@ class weiboMonitor():
                             print('Info', '目前有 %s 条微博' % len(self.itemIds))
 
                     except:
-                        print('error')
+
+                        print(traceback.format_exc())
+                        # print('error')
 
                         # sys.exit()
 
@@ -105,11 +110,12 @@ class weiboMonitor():
                 line = line.strip('\n')
                 itemIds.append(line)
         for i in self.uid:
+            time.sleep(6)
 
             # userInfo = 'https://m.weibo.cn/api/container/getIndex?type=uid&value=%s' % (i)
             userInfo = 'https://m.weibo.cn/api/container/getIndex?jumpfrom=weibocom&containerid=%s_-_sort_time' % (
                 i)
-            res = requests.get(userInfo, headers=self.reqHeaders)
+            res = requests.get(userInfo, headers=self.reqHeaders,stream=True, verify=False)
             # testt=res.text
             d = res.json()['data']['cards']
             for j in d:
@@ -165,7 +171,9 @@ class weiboMonitor():
 
 
                     except:
-                        print('Error')
+
+                        print(traceback.format_exc())
+                        # print('Error')
 
 
 if __name__ == '__main__':
