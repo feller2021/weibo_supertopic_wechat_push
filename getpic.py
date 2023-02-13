@@ -19,11 +19,11 @@ def getweibopic(idd,urll):
 
     header = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
-        'Accept': 'application/json, text/plain, */*',
+        'Accept': 'application/json, text/plain, */*','Connection':'close',
         'Referer': 'https://m.weibo.cn/u/'  # 这个需要改成所要爬取用户主页的手机版本下的url
     }
     imgpost='https://push.bot.qw360.cn/send/e54011f0-f9aa-11eb-806f-9354f453c154'
-    headers = {'Content-Type': 'application/json'}
+    headers = {'Content-Type': 'application/json','Connection':'close'}
 
     # 'https://m.weibo.cn/detail/4668413949250061'
     # def getweibopic(id):
@@ -31,7 +31,7 @@ def getweibopic(idd,urll):
     # 4668413949250061
     for i in range(0, 1):
         realurl = base_url + str(i)
-        req = request.Request(url=realurl, headers=header)
+        req = request.Request(url=realurl, headers=header,stream=True, verify=False)
         # resp = requests.get(realurl, headers=header)
         resp = request.urlopen(req, context=context).read().decode()
         # print('==============正在下载第' + str(i) + '页的图片===============')
@@ -61,7 +61,7 @@ def getweibopic(idd,urll):
             pp=re.compile('"(.*?)"').findall(umg)
             print(type(pp))
             for lis in pp:
-                jpg='https://wx4.sinaimg.cn/large/'+lis+'.jpg'
+                jpg='https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/'+lis+'.jpg'
                 # print(jpg)
                 postdata = json.dumps({"msg": {"type": "image", "url": "%s" % jpg}})
                 # repp = requests.post(url=imgpost, data=postdata, headers=headers)
