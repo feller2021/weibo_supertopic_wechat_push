@@ -12,7 +12,7 @@ from django.template.defaultfilters import striptags
 
 header = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
-    'Accept': 'application/json, text/plain, */*',
+    'Accept': 'application/json, text/plain, */*','Connection':'close',
     'Referer': 'https://m.weibo.cn/u/'  # 这个需要改成所要爬取用户主页的手机版本下的url
 }
 
@@ -23,7 +23,7 @@ def getgy(urlid):
     id = urlid
     #'https://m.weibo.cn/status/4725600311578496'
     realurl = 'https://m.weibo.cn/status/%s' % (id)
-    res = requests.get(realurl, headers=header)
+    res = requests.get(realurl, headers=header,stream=True, verify=False)
 
     res.encoding = 'utf-8'
     root = etree.HTML(res.content)
