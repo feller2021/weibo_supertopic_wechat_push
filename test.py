@@ -136,6 +136,9 @@ class weiboMonitor():
                                         f.write(x['mblog']['id'] + '\n')
                                         idd = str(x['mblog']['id'])
                                         # print('idd is' + idd)
+                                        print("最新的是id："+str(x['mblog']['id']))
+                                        dayin="https://m.weibo.cn/status/"
+                                        print("最新的微博链接是："+dayin+str(x['mblog']['id']))
                                         txt = x
 
                                         createtime = x['mblog']['created_at']
