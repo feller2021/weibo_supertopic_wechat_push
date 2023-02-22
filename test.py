@@ -47,9 +47,14 @@ class weiboMonitor():
         qq = tosuperid.findsupid('姜杉')
 
         self.uid = [aa, bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm,nn]
+        print("---总共要循环的人---")
+        print(self.uid)
+        print("---总共要循环的人---")
 
     # 获取访问连接
+
     def getweiboInfo(self):
+        print("# 获取访问连接")
         self.itemIds = []
 
         self.weiboInfo = []
@@ -61,6 +66,8 @@ class weiboMonitor():
             # userInfo = 'https://m.weibo.cn/api/container/getIndex?containerid=231522type%s&page_type=searchall' % (i)
             userInfo = 'https://m.weibo.cn/api/container/getIndex?jumpfrom=weibocom&containerid=%s_-_sort_time' % (
                 i)
+            print("i的值是："+i)
+            print("第 "+i+"---uid开始获取数据")
             res = requests.get(userInfo, headers=self.reqHeaders,stream=True, verify=False)
             d = res.json()['data']['cards']
             # print(d)
@@ -70,6 +77,7 @@ class weiboMonitor():
                 # print(df)
                 if int(df) == 11:
                     try:
+                        print(j)
                         dfd = j['card_group']
                         # print(type(dfd))
                         with open('wbIds.txt', 'a') as f:
@@ -88,9 +96,33 @@ class weiboMonitor():
                     except:
 
                         print(traceback.format_exc())
+                        pass
                         # print('error')
 
                         # sys.exit()
+                else:
+                    try:
+                        print(j)
+
+                        with open('wbIds.txt', 'a') as f:
+                            for x in j['card_type']:
+
+                                kl = x
+
+                                print(kl)
+                                if int(kl) == 9:
+                                    mblog = j['mblog']['id']
+                                    print(mblog)
+
+                                    f.write(j['mblog']['id'] + '\n')
+                                    self.itemIds.append(j['mblog']['id'])
+                            print('Info', 'card_type不等于11时，微博数目获取成功')
+                            print('Info', 'card_type不等于11时，目前有 %s 条微博' % len(self.itemIds))
+
+                    except:
+
+                        print(traceback.format_exc())
+                        pass
 
                     # if j['card_type'] == 11:
                     #     try:
@@ -102,7 +134,9 @@ class weiboMonitor():
                     # if j['card_type'] == 11:
 
     # 开始监控
+
     def startmonitor(self, ):
+        print("# 开始监控")
         returnDict = {}  # 获取微博相关内容
         itemIds = []
         with open('wbIds.txt', 'r') as f:
@@ -176,6 +210,8 @@ class weiboMonitor():
                     except:
 
                         print(traceback.format_exc())
+                        pass
+                        print("没有更新")
                         # print('Error')
 
 
