@@ -58,7 +58,7 @@ def getpiclast(idd):
                 for lis in pic:
                     jpg = 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/' + lis + '.jpg'
                     print("TUPISN"+jpg)
-                    zuhe = "<img src=\"" + jpg + "\" >"
+                    zuhe = "<img style=max-width:100%; max-height:100%; src=\"" + jpg + "\" >"
                     tupian += zuhe
                     postdata = json.dumps({"msg": {"type": "image", "url": "%s" % jpg}})
                     # repp = requests.post(url=imgpost, data=postdata, headers=headers)
@@ -75,7 +75,7 @@ def getpiclast(idd):
                 for lis2 in pic2:
                     jpg2 = 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/' + lis2 + '.jpg'
                     print(jpg2)
-                    zuhe = "<img src=\"" + jpg2 + "\" >"
+                    zuhe = "<img style=max-width:100%; max-height:100%; src=\"" + jpg2 + "\" >"
                     tupian += zuhe
                     postdata = json.dumps({"msg": {"type": "image", "url": "%s" % jpg2}})
                     # repp = requests.post(url=imgpost, data=postdata, headers=headers)
@@ -86,9 +86,9 @@ def getpiclast(idd):
                 # print(pic_num2)
             return tupian
 
-        
-        
-        
+
+
+
 def getpiclast2(idd):
     id = idd
     realurl = 'https://m.weibo.cn/status/%s' % id
@@ -122,7 +122,7 @@ def getpiclast2(idd):
                     jpg = 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/' + lis + '.jpg'
                     print(jpg)
                     tupian88.append(jpg)
-                    zuhe = "<img src=\"" + jpg + "\" >"
+                    zuhe = "<img style=max-width:100%; max-height:100%; src=\"" + jpg + "\" >"
                     tupian += zuhe
                     postdata = json.dumps({"msg": {"type": "image", "url": "%s" % jpg}})
                     # repp = requests.post(url=imgpost, data=postdata, headers=headers)
@@ -140,7 +140,7 @@ def getpiclast2(idd):
                     jpg2 = 'https://image.baidu.com/search/down?url=https://wx4.sinaimg.cn/large/' + lis2 + '.jpg'
                     print(jpg2)
                     tupian88.append(jpg2)
-                    zuhe = "<img src=\"" + jpg2 + "\" >"
+                    zuhe = "<img style=max-width:100%; max-height:100%; src=\"" + jpg2 + "\" >"
                     tupian += zuhe
                     postdata = json.dumps({"msg": {"type": "image", "url": "%s" % jpg2}})
                     # repp = requests.post(url=imgpost, data=postdata, headers=headers)
@@ -149,9 +149,9 @@ def getpiclast2(idd):
                 pic_num2 = k['retweeted_status']['pic_num']
                 picww = pic_num2
                 # print(pic_num2)
-            return tupian88        
-        
-        
+            return tupian88
+
+
 def mun(idd):
     id = idd
     realurl = 'https://m.weibo.cn/status/%s' % id
@@ -235,16 +235,16 @@ def isyuanchuang(idd):
                 b='转发'
                 return b
 
-            
-            
-            
-            
-            
-            
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
 def iphonepushdeer(fasname,idd):
     # https://m.weibo.cn/status/4806281305784430
     # ![](https://wx4.sinaimg.cn/large/006d5LOagy1h5ejyra00lj31o02801kx.jpg)
@@ -260,10 +260,10 @@ def iphonepushdeer(fasname,idd):
         tpp4 += tpp3
 
 
-    
+
     pushkey = os.environ["pushkey"]
     pushdeer = PushDeer(pushkey=pushkey)
-    
+
     print(tpp4)
     if tpp4=='':
         print("无图片")
