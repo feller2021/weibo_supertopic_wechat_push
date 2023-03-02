@@ -68,7 +68,7 @@ class weiboMonitor():
                 i)
             print("i的值是："+i)
             print("第 "+i+"---uid开始获取数据")
-            res = requests.get(userInfo, headers=self.reqHeaders,stream=True, verify=False)
+            res = requests.get(userInfo, headers=self.reqHeaders,stream=True, verify=False,timeout=30)
             d = res.json()['data']['cards']
             # print(d)
             for j in d:
@@ -149,7 +149,7 @@ class weiboMonitor():
             # userInfo = 'https://m.weibo.cn/api/container/getIndex?type=uid&value=%s' % (i)
             userInfo = 'https://m.weibo.cn/api/container/getIndex?jumpfrom=weibocom&containerid=%s_-_sort_time' % (
                 i)
-            res = requests.get(userInfo, headers=self.reqHeaders,stream=True, verify=False)
+            res = requests.get(userInfo, headers=self.reqHeaders,stream=True, verify=False,timeout=30)
             # testt=res.text
             d = res.json()['data']['cards']
             for j in d:
